@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.http import HttpResponse
 
-def voting_view(request):
-    return remder(request. 'blog/voting.html')
+def index(request):
+    return HttpResponse("Hello, welcome to the blogs app!Q)
