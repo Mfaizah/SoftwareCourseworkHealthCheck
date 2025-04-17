@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +7,18 @@
         body {
             font-family: 'Segoe UI', sans-serif;
             background: #f0f0f0;
-            padding: 2rem;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
+
     .card {
         background: #f0f0f0;
         border-radius: 12px;
-        padding: 1.5rem;
-        width: 200px;
+        padding: 3rem;
+        width: 350px;
         margin: auto;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         text-align: center;
@@ -76,5 +80,15 @@
     <input type="range" min="0" max="2" value="1" class="status-slider">
     <div class="status-label">Status: Stable</div>
 </div>
+<script>
+    const slider = document.querySelector('.status-slider');
+    const label = document.querySelector('.status-label');
+    const states = ["Bad", "Improving", "Stable"];
+
+    slider.addEventListener('input', () => {
+        const value = parseInt(slider.value);
+        label.textContent ="Status: " + states[value];
+    });
+</script>
 </body>
 </html>
