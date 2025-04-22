@@ -29,7 +29,9 @@
         color: #444;
         margin-bottom: 1rem;
 
-    }
+    }python manage.py runserver
+    python manage.py runserver
+
     
     .state-boxes {
         display: flex;
@@ -78,17 +80,31 @@
 
     </div>
     <input type="range" min="0" max="2" value="1" class="status-slider">
-    <div class="status-label">Status: Stable</div>
+    <div class="status-label">Status: Improving</div>
 </div>
 <script>
     const slider = document.querySelector('.status-slider');
     const label = document.querySelector('.status-label');
-    const states = ["Getting worse!!", "Improving", "Stable"];
+
+    const stateRed = document.getElementById('state-red');
+    onst stateRed = document.getElementById('state-yellow');
+    onst stateRed = document.getElementById('state-green');
+
+    const states = ["Bad", "Improving", "Stable"];
 
     slider.addEventListener('input', () => {
         const value = parseInt(slider.value);
         label.textContent ="Status: " + states[value];
-    });
+
+        resetStateCircles();
+
+        if (value === 0) stateRed.classList.add('selected');
+        if (value === 1) stateRed.classList.add('selected');
+        if (value === 2) stateRed.classList.add('selected');
+      
+    }
+    stateYellow.classList.add('selected');
+    
 </script>
 </body>
 </html>
