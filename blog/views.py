@@ -1,3 +1,4 @@
 from django.shortcuts import render
 
-# Create your views here.
+def voting(request):
+    rturn render(request, 'voting.html')
